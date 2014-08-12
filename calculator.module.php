@@ -7,7 +7,7 @@
  * difference;
  * quotient;
  * multiplication
- * live example @ http://www.http://dutchnews.ru/phonebook/index.php?content=adcalc
+ * live example @ http://dutchnews.ru/phonebook/index.php?content=adcalc
  */
 class Calculator//creates class Calculator
 {
