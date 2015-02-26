@@ -12,8 +12,6 @@
 #there is one bug
 #so you can
 #debug it yoursel:)
-
-
 import random
 
 def name_to_number(name):
@@ -27,11 +25,8 @@ def name_to_number(name):
         name = 3
     elif name == 'scissors':
         name = 4
-    else:
-        print 'only 5 words above'
+
     return name
-#name = 'lizard'    
-#print name_to_number(name)
 
 def number_to_name(number):
     if number == 0:
@@ -44,12 +39,7 @@ def number_to_name(number):
         number = 'lizard'
     elif number == 4:
         number = 'scissors'
-    else:
-        print 'only numbers 0 - 4'
     return number
-#number = 3   
-#print number_to_name(number)
-    
 
 def rpsls(player_name):
     
@@ -60,16 +50,14 @@ def rpsls(player_name):
     comp_number = random.randrange (0,5) 
     comp_name = number_to_name(comp_number)
     print 'Computer chooses', comp_name
-    win_formula = (player_number + comp_number) % 4
-    if comp_number == player_number:
-        print 'Player and computer tie!'
-    else:
-        if win_formula == 3:
-            print 'Player wins'
-        else:
-            print 'Computer wins'
-    
-    
+    win_formula = player_number - comp_number
+    if win_formula == 1 or win_formula == 2 or win_formula == -3 or win_formula == -4:
+        print 'Player wins'
+    elif win_formula == 0:
+        print 'Computer and Player tie!'
+    elif win_formula == -1 or win_formula == -2 or win_formula == 3 or win_formula == 4:
+        print 'Computer wins'
+
 print rpsls('rock')
 print rpsls('Spock')
 print rpsls('paper')
