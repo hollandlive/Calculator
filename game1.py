@@ -1,9 +1,25 @@
+#artem aksenov @hollandlive 26-02-2015
+#my first python logical game
+#that i borrowed from coursera
+#here is description
+#Scissors Cuts Paper 
+#Covers Rock Crushes 
+#Lizard Poisons Spock 
+#Smashes Scissors Decapitates 
+#Lizard Eats Paper 
+#Disproves Spock Vaporizes 
+#Rock Crushes Scissors
+#there is one bug
+#so you can
+#debug it yoursel:)
+
+
 import random
 
 def name_to_number(name):
     if name == 'rock':
         name = 0
-    elif name == 'spock':
+    elif name == 'Spock':
         name = 1
     elif name == 'paper':
         name = 2
@@ -21,7 +37,7 @@ def number_to_name(number):
     if number == 0:
         number = 'rock'
     elif number == 1:
-        number = 'spock'
+        number = 'Spock'
     elif number == 2:
         number = 'paper'
     elif number == 3:
@@ -43,25 +59,19 @@ def rpsls(player_name):
     player_number = name_to_number(player_name)
     comp_number = random.randrange (0,5) 
     comp_name = number_to_name(comp_number)
-    print 'Computer chooses ', comp_name
-    if comp_number == (player_number + 1) or (player_number + 2):
-        comp_number = 'WINNER'
-        return comp_number
-    elif comp_number == (player_number - 1) or (player_number - 2):
-        comp_number = 'looser'
-        return comp_number
+    print 'Computer chooses', comp_name
+    win_formula = (player_number + comp_number) % 4
+    if comp_number == player_number:
+        print 'Player and computer tie!'
     else:
-        return 1
-    return comp_name
-    return player_name
-
+        if win_formula == 3:
+            print 'Player wins'
+        else:
+            print 'Computer wins'
     
     
-    
-
-
 print rpsls('rock')
-print rpsls('spock')
+print rpsls('Spock')
 print rpsls('paper')
 print rpsls('lizard')
 print rpsls('scissors')
