@@ -10,7 +10,7 @@
 #Disproves Spock Vaporizes 
 #Rock Crushes Scissors
 #there is one bug
-#so you can
+#so you can##
 #debug it yoursel:)
 import random
 
